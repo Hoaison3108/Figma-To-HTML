@@ -1,0 +1,414 @@
+/* Tạo base dự án */
+* {
+  box-sizing: border-box;
+}
+
+/* Tạo biến dùng chung, sửa 1 lần tác động lên toàn bộ các vị trí sử dụng */
+:root {
+  --font-heading: "sen", sans-serif;
+  --primary-color: #ffb900;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Khôi phục cỡ chữ mặc định theo rem */
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+/* ==============common=================== */
+/*Code thẻ a dùng chung */
+a {
+  text-decoration: none; /*bỏ gạch chân text*/
+}
+.heading-lv2 {
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 3.8rem;
+  font-weight: 700;
+  line-height: 1.27;
+  letter-spacing: -0.76px;
+}
+
+/* code kích thước trang dung chung */
+.main-content {
+  width: 1170px; /*Kích thước trang web 1170*/
+  /* xử lý trang web sát lề */
+  max-width: calc(100% - 48px);
+  /* Canh giữa */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* code cho btn chung */
+.btn {
+  display: inline-block;
+  min-width: 118px;
+  padding: 0px 16px;
+  line-height: 50px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 999px;
+  background: #171100;
+}
+/* tác động khi rê chuột vào nút button */
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+/* =======Body header dùng chung=========== */
+.header {
+  background: #fffcf4;
+}
+
+/* tác động  đồng thời lên class fixed và class header */
+.header.fixed {
+  /*z-index kiểm soát thứ tự xếp chồng của các phần tử dọc theo trục thẳng đứng, mặc định là 0 nên 1 sẽ chồng lên trên*/
+  z-index: 1;
+  /* Tạo hiệu ứng bám dính, khi nội dung trong thẻ cha gần nhát có thanh cuộn */
+  position: sticky;
+  /* neo lại 8px: 36px -8 = 28px */
+  top: -28px;
+}
+
+/*tác động vào class body là con của class header*/
+.header .body {
+  display: flex;
+  align-items: center;
+  padding: 36px 0 8px;
+}
+
+/* Tác động vào class nav đồng thời kéo kéo class action về bên trái */
+.nav {
+  margin-left: auto;
+}
+
+/*tác động vào thẻ ul là con của class nav*/
+.nav ul {
+  display: flex;
+}
+/* tác động vào thẻ a con của class nav */
+.nav a {
+  color: #5f5b53;
+  /* text-align: center; */
+  /* font-family: Poppins; đã được thừa kế*/
+  font-size: 1.6rem;
+  font-style: normal;
+  /* font-weight: 400; đã dc thừa kế */
+  /* line-height: 28px; */
+  /* canh khoảng cách cho các thẻ a: trên dưới 8px, trái phái 21px tổng khoản cách 42 như thiết kế */
+  padding: 8px 21px;
+  position: relative;
+}
+/* liệt kê áp dụng đồng thời cho các thẻ */
+.nav li.active a,
+/* tác động lên các thẻ a, con của class nav khi rê chuột vào các thẻ a */
+.nav a:hover {
+  color: #171100;
+  /* font-weight: 600; thay đổi cỡ chứ */
+  /* Thay thế chuyển đổi màu chữ khi rê chuột và thay thế font-weight */
+  /* đổ bóng trục ngang lệch phải 1px, trục dọc 0px, đô nhòe, màu dùng hiện tại*/
+  text-shadow: 1px 0 0 currentColor;
+}
+
+/* Tác động vào đằng sau thẻ a thuộc thẻ li có class là active, thuộc class nav */
+.nav li.active a::after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+  position: absolute;
+  left: 21px;
+  bottom: 6px;
+}
+
+.header .btn-sign-up {
+  min-width: 114px;
+}
+/* tạo khoản cách của btn Sign up với Reviews + padding = 70px */
+.header .action {
+  margin-left: 49px;
+}
+
+/* ==============Hero================= */
+.hero {
+  padding: 56px 0 65px;
+  background: #fffcf4;
+}
+.hero .body {
+  display: flex;
+}
+
+/* ============hero left=========== */
+.hero .media-block {
+  position: relative;
+  width: 48%;
+}
+
+.hero .media-block .img {
+  width: 470px;
+  height: 685px;
+  /* co giản lấp đầy khung ảnh */
+  object-fit: cover;
+  /* bo góc */
+  border-radius: 20px;
+}
+
+.hero .hero-summary {
+  padding: 24px;
+  width: 270px;
+  /* định vị vị trí của khối tương đối so với khối relative */
+  position: absolute;
+  bottom: 48px;
+  right: 0px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0, 05);
+}
+
+.hero-summary .item {
+  display: flex;
+  /* canh giữa theo trục dọc */
+  align-items: center;
+}
+
+/* tác động vào class item nằm sau một class item khác */
+.hero-summary .item + .item {
+  margin-top: 22px;
+}
+.hero-summary .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffcf4;
+}
+
+.hero-summary .icon2 {
+  background-color: #fcefff;
+}
+
+.hero-summary .icon3 {
+  background-color: #ebeaff;
+}
+
+.hero-summary .info {
+  margin-left: 16px;
+}
+.hero-summary .label {
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 186%;
+}
+.hero-summary .title {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 167%;
+}
+
+/* ========hero right========== */
+.hero .content-block {
+  width: 52%;
+  padding-left: 130px;
+  padding-top: 64px;
+}
+
+.hero .heading {
+  color: #171100;
+  /* gọi biến dùng chung */
+  font-family: var(--font-heading);
+  font-size: 5.8rem;
+  font-weight: 700px;
+  line-height: 1.17;
+  /* khoảng cách giữa các ký tự */
+  letter-spacing: -1.16px;
+}
+.hero .desc {
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.67;
+}
+
+.hero .cta-group {
+  margin-top: 38px;
+  align-items: center;
+  display: flex;
+}
+
+.hero-cta {
+  min-width: 180px;
+  /* set chiều cao cho btn */
+  line-height: 64px;
+  background-color: var(--primary-color);
+}
+.hero .watch-video {
+  margin-left: 28px;
+  /* bỏ viền border của btn */
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  /* thay đổi kiểu con trỏ thành hình bàn tay khi click vào btn */
+  cursor: pointer;
+}
+
+.hero .watch-video .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background: #fff;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.07);
+}
+
+.hero .watch-video span {
+  margin-left: 14px;
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600px;
+  line-height: 1.67;
+}
+.hero .desc-recent {
+  margin-top: 48px;
+}
+.hero .stats {
+  margin-top: 8px;
+}
+/* vào thẻ strong */
+.hero .stats strong {
+  margin-right: 15px;
+  color: #171100;
+  font-family: var(--font-heading);
+  font-size: 4.4rem;
+  font-weight: 700px;
+  line-height: 1.23;
+}
+/* tác động vào thẻ strong thứ 2 thuộc class stats thuộc class hero  */
+.hero .stats strong:nth-child(2) {
+  margin-left: 28px;
+}
+
+/* ===========popular============= */
+.popular {
+  padding: 65px;
+  margin-top: 135px;
+}
+.popular-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popular-top .desc {
+  margin-top: 16px;
+  width: 458px;
+  color: #5f5b53;
+  font-size: 1.8rem;
+  line-height: 1.67;
+}
+.popular-top .controls {
+  display: flex;
+  /* thiết lập khoảng cách 18px giữa các phần tử con bên trong một Grid hoặc Flexbox container. */
+  gap: 18px;
+}
+.popular-top .control-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.popular-top .control-btn:hover {
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+}
+.popular .course-list {
+  display: flex;
+  gap: 30px;
+  margin-top: 55px;
+}
+.popular .course-item {
+  border-radius: 12px;
+  border: 1px solid #e2dfda;
+  background: #fff;
+}
+.popular .course-item:hover {
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0px 18px 36px 0px rgba(0, 0, 0, 0.05);
+}
+.popular .course-item .thumb {
+  width: 100%;
+  height: 278px;
+  /* làm cho hình ảnh được hiển thị vừa vặn với khung chứa, 
+  che phủ toàn bộ khung mà không làm thay đổi tỷ lệ của hình ảnh,
+   nhưng có thể bị cắt bớt ở các cạnh. */
+  object-fit: cover;
+  border-radius: 12px 12px 0px 0px;
+}
+
+.popular .course-item .info {
+  /* trên dưới trái phải */
+  padding: 16px 22px 22px;
+}
+.popular .course-item .foot,
+.popular .course-item .rating,
+.popular .course-item .head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popular .course-item .title a {
+  color: #171100;
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+}
+.popular .rating .value {
+  margin-left: 6px;
+  color: #fea31b;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.popular .course-item .desc {
+  margin-top: 6px;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 1.86;
+}
+
+.popular .course-item .foot {
+  margin-top: 12px;
+}
+.popular .course-item .price {
+  color: #171100;
+  font-family: 1.8rem;
+  font-weight: 600;
+  line-height: 1.67;
+}
+
+.popular .course-item .btn-book {
+  border: none;
+}
+.popular .course-item .btn-book:hover {
+  background: var(--primary-color);
+}
