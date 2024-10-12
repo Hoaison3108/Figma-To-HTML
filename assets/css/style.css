@@ -41,7 +41,25 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
-
+.line-clamp {
+  display: -webkit-box;
+  /* giới hạn số lượng dòng hiển thị của văn bản 1 dòng,
+   trong khi phần còn lại sẽ bị cắt bớt và thay thế bằng dấu ba chấm (...). */
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  /*  Khi áp dụng, nó sẽ ẩn bất kỳ nội dung nào nằm ngoài kích thước được chỉ định của phần tử, 
+  ngăn không cho nội dung bị tràn ra khỏi khu vực phần tử */
+  overflow: hidden;
+}
+/* sử dụng đồng thời 2 class thì giá trị của --line-clamp là 2 lúc này thay vào biến 
+var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+.break-all {
+  /* được sử dụng để kiểm soát cách xử lý việc ngắt dòng của văn bản trong một phần tử.  */
+  word-break: break-all;
+}
 /* code cho btn chung */
 .btn {
   display: inline-block;
@@ -345,6 +363,7 @@ a {
   margin-top: 55px;
 }
 .popular .course-item {
+  flex: 1;
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
