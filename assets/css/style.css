@@ -505,3 +505,52 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   font-style: italic;
   line-height: 1.54;
 }
+/* ===============================features=========================== */
+.features {
+  margin-top: 135px;
+  padding: 65px 0;
+}
+.features .body {
+  display: flex;
+  justify-content: space-between;
+}
+.features .image {
+  display: flex;
+  gap: 30px;
+}
+
+.features .image img {
+  width: 270px;
+  height: 405px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.features .lower {
+  margin-top: 34px;
+}
+
+.features .content {
+  width: 41%;
+  display: flex;
+  /*các phần tử con của container sẽ được sắp xếp theo chiều dọc, từ trên xuống dưới.
+  Trục chính của Flexbox sẽ thay đổi từ ngang (theo mặc định) sang dọc. 
+  Trục chính trở thành cột dọc, còn trục phụ là hàng ngang.*/
+  flex-direction: column;
+  /* các mục con sẽ được căn giữa theo trục chính,
+  tức là các phần tử sẽ được đặt ở giữa theo chiều ngang */
+  justify-content: center;
+}
+
+.features .desc {
+  margin-top: 16px;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  line-height: 1.75;
+}
+.features .cta-btn {
+  margin-top: 32px;
+  width: 137px;
+  height: 50px;
+  background: var(--primary-color);
+}
