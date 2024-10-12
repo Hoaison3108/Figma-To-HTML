@@ -438,9 +438,17 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   padding: 96px 0;
   background: #2e2100;
 }
-
-.feedback-item {
+.feedback-list {
   display: flex;
+  /* ẩn phần thừa */
+  overflow: hidden;
+}
+.feedback-item {
+  width: 100%;
+  display: flex;
+  /* sử dụng để xác định khả năng co lại 
+  của một mục trong một container sử dụng Flexbox (display: flex). 0 là không co lại*/
+  flex-shrink: 0;
 }
 
 .feedback-item .avatar {
