@@ -593,12 +593,21 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   line-height: 1.75; /* 28px - 175%*/
 }
 .blogs .blog-list {
+  /*sử dụng overflow: hidden;
+   mọi nội dung vượt quá kích thước của phần tử sẽ bị ẩn đi thay vì hiển thị.  */
+  overflow: hidden;
   gap: 30px;
   display: flex;
   margin-top: 55px;
 }
 .blogs .item {
-  width: 33.33%;
+  /*  Khi flex-shrink được đặt thành 0, điều đó có nghĩa là phần tử sẽ không bị thu nhỏ lại 
+  nếu không gian có sẵn trong container bị hạn chế.*/
+  flex-shrink: 0;
+  /* dùng để thiết lập chiều rộng của phần tử bằng cách sử dụng hàm calc() để tính toán giá trị. 
+  Trong trường hợp này, nó tính toán chiều rộng của phần tử bằng cách
+  lấy 33.33% chiều rộng của phần tử cha rồi trừ đi 20px. */
+  width: calc(33.33% - 20px);
   border-radius: 16px;
   background: #fff;
 }
@@ -666,7 +675,27 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
 
 .blogs .item .btn {
   margin-top: 12px;
+  font-size: 1.4rem;
 }
 .blogs .item .btn:hover {
   background: var(--primary-color);
+}
+.blogs .dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 38px;
+}
+
+.blogs .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
+}
+/* viết liền .dot.active thể hiện phần tử phải có đồng thời 2 class thì mới tác dụng */
+.blogs .dot.active {
+  background: var(--primary-color);
+  cursor: default;
 }
