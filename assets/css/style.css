@@ -699,3 +699,53 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   background: var(--primary-color);
   cursor: default;
 }
+
+/* ===============================Footer=========================== */
+.footer {
+  background: #2e2100;
+  padding: 96px 135px 0;
+}
+
+.footer .row {
+  display: flex;
+}
+.footer .row .column {
+  width: 21.6%;
+}
+
+.footer .row .column:first-child {
+  width: 35%;
+}
+
+.footer .desc {
+  margin-top: 18px;
+  max-width: 267px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  /* 26px -186% */
+  line-height: 1.86;
+}
+
+.footer .socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.footer .title {
+  padding-bottom: 14px;
+  padding-right: 48px;
+  display: inline-block;
+  border-bottom: 1px solid #59554b;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  /* 28px - 175% */
+  line-height: 1.75;
+}
+
+.footer .list {
+  margin-top: 28px;
+}
+.footer .list a {
+}
