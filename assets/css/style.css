@@ -506,7 +506,7 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   font-style: italic;
   line-height: 1.54;
 }
-/* ===============================features=========================== */
+/* ===============================features 1=========================== */
 .features {
   margin-top: 135px;
   padding: 65px 0;
@@ -554,4 +554,22 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   width: 137px;
   height: 50px;
   background: var(--primary-color);
+}
+/* ===============================features 2=========================== */
+.features-2nd {
+  margin-top: 70px;
+}
+.features-2nd .body {
+  /*sử dụng để thay đổi hướng sắp xếp của các phần tử con trong một container Flexbox.
+   Khi áp dụng, các phần tử sẽ được hiển thị theo chiều ngang, nhưng theo thứ tự ngược lại.
+  Phần tử đầu tiên sẽ nằm ở bên phải, còn phần tử cuối cùng sẽ nằm ở bên trái.*/
+  flex-direction: row-reverse;
+}
+.features-2nd .content {
+  width: 49%;
+}
+
+.features-2nd .image img {
+  width: 470px;
+  height: 440px;
 }
