@@ -573,3 +573,100 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   width: 470px;
   height: 440px;
 }
+
+/* ===============================Blogs=========================== */
+.blogs {
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #fffcf4;
+}
+
+.blogs .blog-top {
+  text-align: center;
+}
+.blogs .blog-top .desc {
+  /* canh giữa: trên 16 canh giữa dưới 0*/
+  margin: 16 auto 0;
+  width: 448px;
+  color: #696262;
+  font-size: 1.6rem;
+  line-height: 1.75; /* 28px - 175%*/
+}
+.blogs .blog-list {
+  gap: 30px;
+  display: flex;
+  margin-top: 55px;
+}
+.blogs .item {
+  width: 33.33%;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.blogs .item:hover {
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.05);
+}
+.blogs .item .thumb {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  /* bo góc trên trái, phải. dưới ko bo */
+  border-radius: 16px 16px 0px 0px;
+}
+
+.blogs .item .info {
+  /* trái phải 20px dưới 28px */
+  padding: 20px 20px 28px;
+}
+
+.blogs .item .date {
+  position: relative;
+  padding-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  /* 26px - 186% */
+  line-height: 1.86;
+}
+/* pseudo-element ::before để tạo một hình tròn nhỏ trước nội dung */
+.blogs .item .date::before {
+  content: "";
+  margin-right: 4px;
+  /* phần tử sẽ hiển thị như một phần tử cấp dòng, 
+  chiếm không gian vừa đủ và nằm cùng dòng với các phần tử khác, 
+  nhưng các phần tử con bên trong sẽ được sắp xếp theo mô hình flexbox */
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+.blogs .item .date::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  /* Phần tử sẽ được đẩy sang phải thêm 27px so với cạnh phải của phần tử cha */
+  right: -27px;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  border-radius: 0.5px;
+  background: #e2dfda;
+}
+
+.blogs .item .title {
+  margin-top: 12px;
+  color: #171100;
+  font-size: 1.6rem;
+  font-weight: 600;
+  /* 28px-175% */
+  line-height: 1.75;
+}
+
+.blogs .item .btn {
+  margin-top: 12px;
+}
+.blogs .item .btn:hover {
+  background: var(--primary-color);
+}
