@@ -707,6 +707,8 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
 }
 
 .footer .row {
+  padding-bottom: 38px;
+  border-bottom: 1px solid #595548;
   display: flex;
 }
 .footer .row .column {
@@ -748,4 +750,27 @@ var(--line-clamp) để nhận giá trị hiện thị là 2 dòng */
   margin-top: 28px;
 }
 .footer .list a {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #bfbcb2;
+  font-size: 1.4rem;
+  /* 26px -185 */
+  line-height: 1.85;
+}
+.footer .list li:last-child a {
+  margin-bottom: 0;
+}
+
+.footer .list strong {
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.86;
+}
+.footer .copyright {
+  padding: 28px 0;
+  color: #807d74;
+  text-align: center;
+  font-size: 1.4rem;
+  line-height: 1.8;
 }
